@@ -1,8 +1,8 @@
-from torchvision import models
 import time
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from models.backbone import build_resnet34
 from models.layers import (
     Multi_Level_Feature_Aggregation, CBA1x1, CBA3x3, ResBlock, ECA,
     Change_Specific_Transfer, task_interaction_module, decoder, Boundary_Decoder,
@@ -12,7 +12,7 @@ from models.layers import (
 class FCN(nn.Module):
     def __init__(self, in_channels=3, pretrained=True):
         super(FCN, self).__init__()
-        resnet = models.resnet34(weights=models.ResNet34_Weights.DEFAULT if pretrained else None)
+        resnet = build_resnet34(pretrained=pretrained)
         newconv1 = nn.Conv2d(in_channels, 64, kernel_size=7, stride=2, padding=3, bias=False)
         newconv1.weight.data[:, 0:3, :, :].copy_(resnet.conv1.weight.data[:, 0:3, :, :])
 

@@ -11,6 +11,7 @@ warnings.filterwarnings("ignore")
 
 from datasets import RS_ST as RS
 from models.TransSCD import TransSCD as Net
+from utils.checkpoint import load_checkpoint
 
 
 def Index2Color(pred):
@@ -91,7 +92,7 @@ def main(args):
     print(f"Loading model from: {args.ckptpath}")
     net = Net(3, num_classes=N).cuda()
 
-    ckpt = torch.load(args.ckptpath, map_location='cuda', weights_only=False)
+    ckpt = load_checkpoint(args.ckptpath, map_location='cuda')
     if isinstance(ckpt, dict) and 'model_state_dict' in ckpt:
         net.load_state_dict(ckpt['model_state_dict'])
     else:

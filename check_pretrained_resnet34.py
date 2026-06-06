@@ -4,8 +4,8 @@ import sys
 
 import numpy as np
 import torch
-from torchvision.models import ResNet34_Weights, resnet34
 
+from models.backbone import build_resnet34
 from models.TransSCD import TransSCD
 
 
@@ -28,7 +28,7 @@ def main() -> int:
     np.random.seed(args.seed)
 
     try:
-        ref = resnet34(weights=ResNet34_Weights.DEFAULT).conv1.weight.detach().cpu()
+        ref = build_resnet34(pretrained=True).conv1.weight.detach().cpu()
     except Exception as e:
         print("[ERROR] Failed to load torchvision ResNet34 default weights.")
         print(f"[ERROR] {type(e).__name__}: {e}")

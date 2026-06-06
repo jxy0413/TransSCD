@@ -13,6 +13,7 @@ import sys
 
 from utils.loss import TransSCDLoss
 from utils.SCD_misc import ConfuseMatrixMeter, AverageMeter
+from utils.checkpoint import load_checkpoint
 
 from datasets import RS_ST as RS
 
@@ -63,7 +64,7 @@ def main(args):
     bestscore = 0
     if args.resume and os.path.isfile(args.resume):
         print(f"=> Loading checkpoint '{args.resume}'")
-        ckpt = torch.load(args.resume, map_location='cuda', weights_only=False)
+        ckpt = load_checkpoint(args.resume, map_location='cuda')
         if isinstance(ckpt, dict) and 'model_state_dict' in ckpt:
             net.load_state_dict(ckpt['model_state_dict'])
             optimizer.load_state_dict(ckpt['optimizer_state_dict'])
@@ -224,7 +225,7 @@ if __name__ == '__main__':
     parser.add_argument('--num_classes', type=int, default=7)
     parser.add_argument("--seed", default=42, type=int)
     parser.add_argument('--lr', type=float, default=3.5e-4, help='initial learning rate')
-    parser.add_argument('--weight_decay', type=float, default=1e-2)
+    parser.add_argument('--weight_decay', type=float, default=1e-3)
     parser.add_argument('--epoch', type=int, default=100)
     parser.add_argument('--train_batchsize', type=int, default=2)
     parser.add_argument('--val_batchsize', type=int, default=2)

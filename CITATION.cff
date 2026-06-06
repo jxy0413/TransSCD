@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the TransSCD manuscript."
+title: "TransSCD: Transition Prototype Learning for Semantic Change Detection in Remote Sensing Images"
+type: software
+authors:
+  - family-names: Jia
+    given-names: Xiangyu
+    orcid: "https://orcid.org/0009-0009-0328-6319"
+  - family-names: Chen
+    given-names: Zhibo
+    orcid: "https://orcid.org/0000-0002-2346-7530"
+  - family-names: Qin
+    given-names: Jushuang
+  - family-names: Wang
+    given-names: Zhenyao
+  - family-names: Zhang
+    given-names: Xinpeng
+repository-code: "https://github.com/jxy0413/TransSCD"
+license: "CC-BY-NC-4.0"
+version: "1.0.0"
+date-released: "2026-04-15"
+preferred-citation:
+  type: article
+  title: "TransSCD: Transition Prototype Learning for Semantic Change Detection in Remote Sensing Images"
+  authors:
+    - family-names: Jia
+      given-names: Xiangyu
+      orcid: "https://orcid.org/0009-0009-0328-6319"
+    - family-names: Chen
+      given-names: Zhibo
+      orcid: "https://orcid.org/0000-0002-2346-7530"
+    - family-names: Qin
+      given-names: Jushuang
+    - family-names: Wang
+      given-names: Zhenyao
+    - family-names: Zhang
+      given-names: Xinpeng
+  journal: "ISPRS Journal of Photogrammetry and Remote Sensing"
+  year: 2026
+  notes: "Manuscript under review."

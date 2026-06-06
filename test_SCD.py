@@ -11,6 +11,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from utils.SCD_misc import ConfuseMatrixMeter
+from utils.checkpoint import load_checkpoint
 from datasets import RS_ST as RS
 from models.TransSCD import TransSCD as Net
 
@@ -39,7 +40,7 @@ def test(modelpath, test_loader, net):
     def test_phase():
         tool4metric.clear()
 
-        ckpt = torch.load(modelpath, map_location='cuda', weights_only=False)
+        ckpt = load_checkpoint(modelpath, map_location='cuda')
         if isinstance(ckpt, dict) and 'model_state_dict' in ckpt:
             net.load_state_dict(ckpt['model_state_dict'])
         else:

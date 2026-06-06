@@ -17,6 +17,18 @@ build/
 checkpoints/
 logs/
 results/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Local datasets
+data/
+datasets_local/
+SECOND/
+Landsat-SCD/
+JL1H/
+HRSCD/
 
 # System files
 .DS_Store
