@@ -1,12 +1,8 @@
 # TransSCD
 
-Code for the manuscript:
-
-**TransSCD: Transition Prototype Learning for Semantic Change Detection in Remote Sensing Images**
+Official PyTorch implementation of **TransSCD: Transition Prototype Learning for Semantic Change Detection in Remote Sensing Images**.
 
 Xiangyu Jia, Zhibo Chen, Jushuang Qin, Zhenyao Wang, and Xinpeng Zhang
-
-Status: manuscript under review at *ISPRS Journal of Photogrammetry and Remote Sensing*.
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE)
 
@@ -25,7 +21,7 @@ Key components:
 ## Framework
 
 <p align="center">
-  <img src="assets/framework.png" width="90%">
+  <img src="assets/transscd_framework.png" width="90%">
 </p>
 
 ## Results Reported In The Manuscript
@@ -216,15 +212,14 @@ TransSCD/
 
 ## Citation
 
-If this repository is useful for your research, please cite the manuscript. The citation metadata will be updated after the paper receives a final bibliographic record.
+If this repository is useful for your research, please cite the paper. The citation metadata will be updated after the paper receives a final bibliographic record.
 
 ```bibtex
 @article{jia2026transscd,
   title   = {TransSCD: Transition Prototype Learning for Semantic Change Detection in Remote Sensing Images},
   author  = {Jia, Xiangyu and Chen, Zhibo and Qin, Jushuang and Wang, Zhenyao and Zhang, Xinpeng},
   journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
-  year    = {2026},
-  note    = {Manuscript under review}
+  year    = {2026}
 }
 ```
 
